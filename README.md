@@ -48,8 +48,7 @@ The main components or functionalities of our system are as follows:
 
 12.	Admin Access - The admin will only have to approve the food truck details provided by the owners.
 
-
-6. APPENDICES
+APPENDICES
 
 1.	https://en.wikipedia.org/wiki/Spring_Framework-22.11.2018
 2.	https://spring.io/projects/spring-framework -22.11.2018
