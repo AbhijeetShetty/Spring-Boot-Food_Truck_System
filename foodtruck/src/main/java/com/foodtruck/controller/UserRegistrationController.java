@@ -27,8 +27,7 @@ public class UserRegistrationController {
 		return userRepository.findAll();
 
 	}
-	
-	@PostMapping("/users")
+		@PostMapping("/users")
 	public @ResponseBody Iterable<UserRegistration> insertUsers() {
 		return userRepository.findAll();
 
