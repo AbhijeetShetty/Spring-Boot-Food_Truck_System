@@ -32,7 +32,7 @@ public class UserRegistrationController {
 	@PostMapping("/users")
 	public @ResponseBody String addNewUser(@RequestParam String loginType, @RequestParam String loginId,
 			@RequestParam String password, @RequestParam String firstName, @RequestParam String lastName,
-			@RequestParam String emailId, @RequestParam String mobileNumber) {
+			@RequestParam String emailId, @RequestParam String mobileNumber){
 
 		UserRegistration newUser = new UserRegistration();
 		newUser.setLoginType(loginType);
