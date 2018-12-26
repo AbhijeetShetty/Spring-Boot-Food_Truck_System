@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,12 +28,23 @@ public class UserRegistrationController {
 		return userRepository.findAll();
 
 	}
-	@PostMapping("/users")
-	public @ResponseBody Iterable<UserRegistration> insertUsers() {
-		return userRepository.findAll();
 
+	@PostMapping("/users")
+	public @ResponseBody String addNewUser(@RequestParam String loginType, @RequestParam String loginId,
+			@RequestParam String password, @RequestParam String firstName, @RequestParam String lastName,
+			@RequestParam String emailId, @RequestParam String mobileNumber) {
+
+		UserRegistration newUser = new UserRegistration();
+		newUser.setLoginType(loginType);
+		newUser.setLoginId(loginId);
+		newUser.setPassword(password);
+		newUser.setFirstName(firstName);
+		newUser.setLastName(lastName);
+		newUser.setEmailId(emailId);
+		newUser.setMobileNumber(mobileNumber);
+
+		userRepository.save(newUser);
+		return "You Are Registered Successfully ";
 	}
 
 }
-
-
