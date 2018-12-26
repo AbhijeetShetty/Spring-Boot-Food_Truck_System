@@ -4,13 +4,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import org.springframework.data.annotation.Id;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -24,32 +21,31 @@ public class UserRegistration implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@NotBlank(message = "Login Type must not be blank!")
 	@Column(name = "loginType")
 	String loginType;
-	
+
 	@Id
 	@NotBlank(message = "Login name must not be blank!")
 	@Column(name = "loginId")
 	String loginId;
-	
+
 	@Column(name = "password")
 	@JsonIgnore
 	private String password;
-	
+
 	@Column(name = "firstName")
 	private String firstName;
-	
+
 	@Column(name = "lastName")
 	private String lastName;
-	
+
 	@Column(name = "emailId")
 	private String emailId;
-	
-	
-	@Size(min=10,max=10)
+
+	@Size(min = 10, max = 10)
 	@Column(name = "mobileNumber")
 	private String mobileNumber;
 
