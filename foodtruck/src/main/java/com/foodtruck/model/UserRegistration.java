@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -29,6 +31,7 @@ public class UserRegistration implements Serializable {
 
 	@Id
 	@NotBlank(message = "Login name must not be blank!")
+	//@OneToMany(targetEntity = TruckRegistration.class)
 	@Column(name = "loginId")
 	String loginId;
 
