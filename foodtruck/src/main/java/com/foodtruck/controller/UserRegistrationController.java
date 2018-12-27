@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.foodtruck.model.Feedback;
 import com.foodtruck.model.TruckRegistration;
 import com.foodtruck.model.UserRegistration;
+import com.foodtruck.repository.FeedbackRepository;
 import com.foodtruck.repository.LoginRepository;
 import com.foodtruck.repository.TruckRepository;
 import com.foodtruck.repository.UserRepository;
+import com.foodtruck.service.FeedbackDAOService;
 import com.foodtruck.service.TruckDAOService;
 
 @RestController
@@ -37,6 +39,11 @@ public class UserRegistrationController {
 	private TruckRepository truckRepository;
 	@Autowired
 	private TruckDAOService truckService;
+	@Autowired
+	private FeedbackDAOService feedbackService;
+	
+	@Autowired
+	private FeedbackRepository feedbackRepository;
 
 	@GetMapping("/users")
 	public @ResponseBody Iterable<UserRegistration> retriveAllUsers() {
@@ -47,6 +54,11 @@ public class UserRegistrationController {
 	@GetMapping("/foodtrucks")
 	public @ResponseBody Iterable<TruckRegistration> retriveAllFoodTrucks() {
 		return truckRepository.findAll();
+
+	}
+	@GetMapping("/viewFeedbacks")
+	public @ResponseBody Iterable<Feedback> retriveFeedbacks() {
+		return feedbackRepository.findAll();
 
 	}
 
@@ -88,6 +100,14 @@ public class UserRegistrationController {
 		TruckRegistration savedTruck = truckService.saveTruck(truckRegistration);
 
 		return "Truck Details Saved with TruckID "+savedTruck.getTruckId();
+	}
+	
+	@PostMapping("/giveFeedback")
+	public @ResponseBody String addFeedback( @RequestBody Feedback feedback) {
+		
+		feedbackService.savefeedback(feedback);
+
+		return "Your Feedback Is Valuable For Us ";
 	}
 
 }
