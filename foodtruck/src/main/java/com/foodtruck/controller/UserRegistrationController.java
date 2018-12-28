@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -77,7 +78,7 @@ public class UserRegistrationController {
 	}
 
 	@PostMapping("/users")
-	public @ResponseBody String addNewUser(@RequestParam String loginType, @RequestParam String loginId,
+	public @ResponseBody String addNewUser(@Valid @RequestParam String loginType, @RequestParam String loginId,
 			@RequestParam String password, @RequestParam String firstName, @RequestParam String lastName,
 			@RequestParam String emailId, @RequestParam String mobileNumber) {
 
@@ -89,6 +90,7 @@ public class UserRegistrationController {
 		newUser.setLastName(lastName);
 		newUser.setEmailId(emailId);
 		newUser.setMobileNumber(mobileNumber);
+		
 
 		userRepository.save(newUser);
 		return "You Are Registered Successfully ";

@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,6 +24,11 @@ public class UserRegistration implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name="userId")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int userId;
+	
 
 	@Id
 	@NotBlank(message = "Login Type must not be blank!")
@@ -44,7 +50,8 @@ public class UserRegistration implements Serializable {
 
 	@Column(name = "lastName")
 	private String lastName;
-
+	
+	@Pattern(regexp="\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b",message = "Provided Email should be valid")
 	@Column(name = "emailId")
 	private String emailId;
 
@@ -56,9 +63,15 @@ public class UserRegistration implements Serializable {
 
 	}
 
-	public UserRegistration(String loginType, String loginId, String password, String firstName, String lastName,
-			String emailId, String mobileNumber) {
+	
+
+	public UserRegistration(int userId, String loginType,
+			 String loginId, String password, String firstName,
+			String lastName,
+			 String emailId,
+			String mobileNumber) {
 		super();
+		this.userId = userId;
 		this.loginType = loginType;
 		this.loginId = loginId;
 		this.password = password;
@@ -66,6 +79,16 @@ public class UserRegistration implements Serializable {
 		this.lastName = lastName;
 		this.emailId = emailId;
 		this.mobileNumber = mobileNumber;
+	}
+
+
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getLoginType() {
@@ -124,11 +147,15 @@ public class UserRegistration implements Serializable {
 		this.mobileNumber = mobileNumber;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "UserRegistration [loginType=" + loginType + ", loginId=" + loginId + ", password=" + password
-				+ ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId + ", mobileNumber="
-				+ mobileNumber + "]";
+		return "UserRegistration [userId=" + userId + ", loginType=" + loginType + ", loginId=" + loginId
+				+ ", password=" + password + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId="
+				+ emailId + ", mobileNumber=" + mobileNumber + "]";
 	}
 
+	
+	
 }
