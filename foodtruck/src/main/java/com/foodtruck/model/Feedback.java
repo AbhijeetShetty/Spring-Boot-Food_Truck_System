@@ -6,6 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity(name = "feedback_tab")
 @Table(name = "feedback_tab")
@@ -15,13 +19,19 @@ public class Feedback implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	@Min(0)
+	@Max(5)
 	@Column(name = "overAllExperience")
 	public int overAllExperience;
-
+	
+	@Min(0)
+	@Max(5)
 	@Column(name = "satisfaction")
 	public int satisfaction;
 
+	
+	@Min(0)
+	@Max(5)
 	@Column(name = "rateOfRecommendation")
 	public int rateOfRecommendation;
 
