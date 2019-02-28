@@ -1,4 +1,4 @@
-# Spring-Boot-Food_Truck_System
+# (UI) ANGULAR 7 + (Backend) Java Spring-Boot : Food_Truck_System
 
 1. INTRODUCTION
 
