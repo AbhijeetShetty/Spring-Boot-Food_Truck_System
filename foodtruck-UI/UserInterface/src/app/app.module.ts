@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import {Router, Routes, RouterModule} from "@angular/router";
+import { HomeComponent } from './home/home.component';
 const appRoutes : Routes = [
   {
     path : 'register',
@@ -23,12 +24,16 @@ const appRoutes : Routes = [
   },
   {
     path:'',
-    component: RegisterComponent,
+    component: HomeComponent,
     pathMatch:'full'
   },
   {
     path:'**',
     component: NotFoundComponent
+  },
+  {
+    path:'home',
+    component: HomeComponent
   }
 
 ]
@@ -39,7 +44,8 @@ const appRoutes : Routes = [
     NotFoundComponent,
     RegisterComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
