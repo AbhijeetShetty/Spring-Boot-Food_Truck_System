@@ -8,8 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
+
 
 @Entity(name = "feedback_tab")
 @Table(name = "feedback_tab")

@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FoodtruckApplication",
+            "request": "launch",
+            "mainClass": "com.foodtruck.FoodtruckApplication",
+            "projectName": "foodtruck"
+        }
+    ]
+}

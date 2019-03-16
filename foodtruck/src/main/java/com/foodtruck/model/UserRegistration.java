@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
@@ -24,12 +22,7 @@ public class UserRegistration implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
-	@Column(name="userId")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int userId;
 	
-
 	@Id
 	@NotBlank(message = "Login Type must not be blank!")
 	@Column(name = "loginType")
@@ -71,7 +64,6 @@ public class UserRegistration implements Serializable {
 			 String emailId,
 			String mobileNumber) {
 		super();
-		this.userId = userId;
 		this.loginType = loginType;
 		this.loginId = loginId;
 		this.password = password;
@@ -83,13 +75,6 @@ public class UserRegistration implements Serializable {
 
 
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
 	public String getLoginType() {
 		return loginType;
@@ -151,7 +136,7 @@ public class UserRegistration implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserRegistration [userId=" + userId + ", loginType=" + loginType + ", loginId=" + loginId
+		return "UserRegistration [loginType=" + loginType + ", loginId=" + loginId
 				+ ", password=" + password + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId="
 				+ emailId + ", mobileNumber=" + mobileNumber + "]";
 	}
