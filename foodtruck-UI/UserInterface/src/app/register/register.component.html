@@ -1,12 +1,19 @@
 
-  <form action="" class="modal-content">
+  <form>
     <div class="container">
       <h1>Register</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
-      <label for="Login-Id"><b>Login-Id</b></label>
-      <input type="text" placeholder="Enter Login-Id" name="login" required>
-
+      <div class="form-group">
+        <label for="LoginId"><b>Login-Id</b></label>
+        <input class="form-control" ngModel id="LoginId" type="text" placeholder="Enter Login-Id" name="LoginId" required minlength="3" maxlength="10">
+        <div class="alert alter-danger" *ngIf="LoginId.touched && !LoginId.valid"> 
+          <div *ngIf="LoginId.errors.required">Login Name Required</div>
+          <div *ngIf="LoginId.errors.minlength">Login Name be minimum 3 character</div>
+          <div *ngIf="LoginId.errors.maxlength">Login Name be maximum 10 character</div>
+        </div>
+      </div>
+      
       <label for="LoginType"><b>Login-Type</b></label> <br>
       <input type="radio" name="LoginType" value="C" checked> Customer<br>
       <input type="radio" name="LoginType" value="O" checked> Owner<br>
