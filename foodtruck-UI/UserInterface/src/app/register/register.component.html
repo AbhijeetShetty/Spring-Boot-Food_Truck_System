@@ -6,11 +6,10 @@
       <hr>
       <div class="form-group">
         <label for="LoginId"><b>Login-Id</b></label>
-        <input class="form-control" ngModel id="LoginId" type="text" placeholder="Enter Login-Id" name="LoginId" required minlength="3" maxlength="10">
+        <input ngModel name="LoginId" #LoginId="ngModel" (change)="log(LoginId)" class="form-control"  id="LoginId" type="text" placeholder="Enter Login-Id"  required minlength="3" maxlength="10">
         <div class="alert alter-danger" *ngIf="LoginId.touched && !LoginId.valid"> 
           <div *ngIf="LoginId.errors.required">Login Name Required</div>
           <div *ngIf="LoginId.errors.minlength">Login Name be minimum 3 character</div>
-          <div *ngIf="LoginId.errors.maxlength">Login Name be maximum 10 character</div>
         </div>
       </div>
       
