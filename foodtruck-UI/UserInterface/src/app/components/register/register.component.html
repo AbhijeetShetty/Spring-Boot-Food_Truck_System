@@ -4,11 +4,11 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
       <div class="form-group">
-        <label for="LoginId"><b>LoginId</b></label>
-        <input required minlength="3" name="LoginId" id="LoginId" type="text" placeholder="Enter Login-Id" formControlName="LoginId" class="form-control" [ngClass]="{ 'is-invalid': submitted && log.LoginId.errors }">
-        <div class="alert alter-danger" *ngIf="LoginId.touched && !LoginId.valid"> 
-          <div *ngIf="LoginId.errors.required">Login Name Required</div>
-          <div *ngIf="LoginId.errors.minlength">Login Name be minimum 3 character</div>
+        <label for="loginId"><b>LoginId</b></label>
+        <input required minlength="3" name="loginId" id="loginId" type="text" placeholder="Enter Login-Id" formControlName="loginId" class="form-control" [ngClass]="{ 'is-invalid': submitted && log.loginId.errors }">
+        <div class="alert alter-danger" *ngIf="loginId.touched && !loginId.valid"> 
+          <div *ngIf="loginId.errors.required">Login Name Required</div>
+          <div *ngIf="loginId.errors.minlength">Login Name be minimum 3 character</div>
         </div>
       </div>
       
@@ -19,17 +19,17 @@
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="Fname"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="Fname" required>
+      <label for="firstName"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="firstName" required>
 
-      <label for="Lname"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="Lname" required>
+      <label for="lastName"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lastName" required>
       
-      <label for="Phone"><b>Phone Number</b></label>
-      <input type="text" placeholder="Enter Phone No." name="Phone" required>
+      <label for="phoneNumber"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter Phone No." name="phoneNumber" required>
   
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
       <hr>
   
       <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
