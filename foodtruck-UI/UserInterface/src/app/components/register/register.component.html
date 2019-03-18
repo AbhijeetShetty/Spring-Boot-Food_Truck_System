@@ -1,12 +1,11 @@
-
-  <form>
+<h1>Register</h1>
+  <form >
     <div class="container">
-      <h1>Register</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
       <div class="form-group">
-        <label for="LoginId"><b>Login-Id</b></label>
-        <input ngModel name="LoginId" #LoginId="ngModel" (change)="log(LoginId)" class="form-control"  id="LoginId" type="text" placeholder="Enter Login-Id"  required minlength="3" maxlength="10">
+        <label for="LoginId"><b>LoginId</b></label>
+        <input required minlength="3" name="LoginId" id="LoginId" type="text" placeholder="Enter Login-Id" formControlName="LoginId" class="form-control" [ngClass]="{ 'is-invalid': submitted && log.LoginId.errors }">
         <div class="alert alter-danger" *ngIf="LoginId.touched && !LoginId.valid"> 
           <div *ngIf="LoginId.errors.required">Login Name Required</div>
           <div *ngIf="LoginId.errors.minlength">Login Name be minimum 3 character</div>
