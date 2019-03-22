@@ -58,7 +58,7 @@ public class UserRegistration implements Serializable {
 
 	
 
-	public UserRegistration(int userId, String loginType,
+	public UserRegistration(String loginType,
 			 String loginId, String password, String firstName,
 			String lastName,
 			 String emailId,

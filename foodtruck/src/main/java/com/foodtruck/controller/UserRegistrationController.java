@@ -78,7 +78,7 @@ public class UserRegistrationController {
 		return users;
 
 	}
-
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/users")
 	public @ResponseBody String addNewUser(@Valid @RequestParam String loginType, @RequestParam String loginId,
 			@RequestParam String password, @RequestParam String firstName, @RequestParam String lastName,
