@@ -19,10 +19,4 @@ export class UserService {
     return this.http.post(this.url, user, HttpOptions);
   }
 
-  getUser(userId: string): Observable<any> {
-    this.url = "//localhost:8080/users/";
-    this.url = this.url.concat(userId);
-    return this.http.get(this.url, HttpOptions);
-  }
-
 }
