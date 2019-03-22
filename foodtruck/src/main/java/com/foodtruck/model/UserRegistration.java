@@ -11,7 +11,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "user_tab")
 @IdClass(UserRegistrationId.class)
@@ -30,12 +29,10 @@ public class UserRegistration implements Serializable {
 
 	@Id
 	@NotBlank(message = "Login name must not be blank!")
-	//@OneToMany(targetEntity = TruckRegistration.class)
 	@Column(name = "loginId")
 	String loginId;
 
 	@Column(name = "password")
-	@JsonIgnore
 	private String password;
 
 	@Column(name = "firstName")
@@ -58,10 +55,13 @@ public class UserRegistration implements Serializable {
 
 	
 
-	public UserRegistration(String loginType,
-			 String loginId, String password, String firstName,
+	public UserRegistration(
+			String loginType,
+			String loginId, 
+			String password, 
+			String firstName,
 			String lastName,
-			 String emailId,
+			String emailId,
 			String mobileNumber) {
 		super();
 		this.loginType = loginType;

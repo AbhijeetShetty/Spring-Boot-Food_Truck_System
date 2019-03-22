@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +28,6 @@ import com.foodtruck.service.FeedbackDAOService;
 import com.foodtruck.service.TruckDAOService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "/foodtruck")
 public class UserRegistrationController {
 
@@ -80,22 +79,10 @@ public class UserRegistrationController {
 	}
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/users")
-	public @ResponseBody String addNewUser(@Valid @RequestParam String loginType, @RequestParam String loginId,
-			@RequestParam String password, @RequestParam String firstName, @RequestParam String lastName,
-			@RequestParam String emailId, @RequestParam String mobileNumber) {
+	public @ResponseBody String addNewUser(@RequestBody UserRegistration newUser) {
 
-		UserRegistration newUser = new UserRegistration();
-		newUser.setLoginType(loginType);
-		newUser.setLoginId(loginId);
-		newUser.setPassword(password);
-		newUser.setFirstName(firstName);
-		newUser.setLastName(lastName);
-		newUser.setEmailId(emailId);
-		newUser.setMobileNumber(mobileNumber);
-		
-
-		userRepository.save(newUser);
-		return "You Are Registered Successfully ";
+		UserRegistration saveUser = userRepository.save(newUser);
+		return "You Are Registered Successfully "+saveUser.getEmailId();
 	}
 
 	@PostMapping("/foodTruckRegistration")
