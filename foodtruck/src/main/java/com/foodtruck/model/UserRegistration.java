@@ -2,18 +2,18 @@ package com.foodtruck.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-
 @Entity(name = "user_tab")
-@IdClass(UserRegistrationId.class)
 @Table(name = "user_tab")
 public class UserRegistration implements Serializable {
 
@@ -21,16 +21,18 @@ public class UserRegistration implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@NotBlank(message = "Login Type must not be blank!")
-	@Column(name = "loginType")
-	String loginType;
 
 	@Id
-	@NotBlank(message = "Login name must not be blank!")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	long id;
+
+	
 	@Column(name = "loginId")
 	String loginId;
+	
+	@NotBlank
+	@Column(name = "loginType")
+	String loginType;
 
 	@Column(name = "password")
 	private String password;
