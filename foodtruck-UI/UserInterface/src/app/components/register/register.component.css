@@ -2,17 +2,19 @@
 
 /* Add padding to containers */
 .container {
-  padding: 16px;
+  padding: 0px;
 }
-
+.label-group{
+  padding: 10px;
+}
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  width: 75%;
+  padding: 0px;
+  margin: 0px 0px 0px 70px;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #f7bc65;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -22,8 +24,8 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  border: 1px solid #e78f0b;
+  width: 1200px;
 }
 
 /* Set a style for the submit/register button */
@@ -31,10 +33,10 @@ hr {
   background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
-  margin: 8px 0;
+  margin: 0px 20px 0px 70px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 25%;
   opacity: 0.9;
 }
 
@@ -47,15 +49,11 @@ a {
   color: dodgerblue;
 }
 
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
+
 .modal-content {
   background-color: #f7f5f5;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid rgb(255, 190, 49);
-  width: 85%;
-  height: 1155px; /* Could be more or less, depending on screen size */
+  margin: 3% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid rgb(250, 210, 125);
+  width: 600px;
+  height: 1150px; /* Could be more or less, depending on screen size */
 }
