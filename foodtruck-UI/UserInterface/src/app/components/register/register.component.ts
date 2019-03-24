@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user-service';
 import { AlertService } from '../../services/alert-service';
 import { first } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router,
+    private route: ActivatedRoute,
     private alertService: AlertService
   ) { }
 
