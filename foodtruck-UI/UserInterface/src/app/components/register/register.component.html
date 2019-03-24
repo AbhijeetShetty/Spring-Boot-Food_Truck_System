@@ -1,4 +1,5 @@
-<h2 align="center">Register</h2>
+<div>
+  <h2 align="center">Register</h2>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="modal-content">
   <div class="form-group">
     <label for="firstName" class="label-group">First Name</label><br>
@@ -55,6 +56,8 @@
   </div>
   <div class="form-group">
     <button type="submit" class="registerbtn">Submit</button>
-  </div> 
+  </div>
+  <router-outlet></router-outlet>
 </form>
 <hr>
+</div>

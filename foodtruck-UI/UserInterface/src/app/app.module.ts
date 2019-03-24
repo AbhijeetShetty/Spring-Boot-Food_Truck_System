@@ -4,6 +4,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { AlertService } from './services/alert-service';
+import { UserService } from './services/user-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -58,7 +60,7 @@ const appRoutes : Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AlertService,UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,8 +24,10 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #e78f0b;
-  width: 1200px;
+  height: 1px;
+  width: 1350px;
+  background-color: rgb(255, 153, 0);
+  border: none;
 }
 
 /* Set a style for the submit/register button */
@@ -33,9 +35,8 @@ hr {
   background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
-  margin: 0px 20px 0px 70px;
+  margin: 50px 50px 50px 200px;
   border: none;
-  cursor: pointer;
   width: 25%;
   opacity: 0.9;
 }
