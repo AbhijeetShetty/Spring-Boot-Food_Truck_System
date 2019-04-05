@@ -1,27 +1,5 @@
 # (UI) ANGULAR 7 + (Backend) Java Spring-Boot : Food_Truck_System
 
-1. INTRODUCTION
-
-1.1 Purpose
-
-This is an overview of our application, which we are developing to satisfy the needs of a customer to purchase his food and the owner to reach the customer’s need easily. In this system, our application acts as a common platform to allow the customer to locate the food trucks nearby and the owner to make his service to the customer.
-
-1.2 Scope
-
-This application commits a fast-paced lifestyle for this generation. It helps the owner to easily manage the orders. It will be also provides the customer to make a choice from the menu at his specified time.
-
-1.3 Overview of Document
-	
-This document will focus on the specifications and functionalities of the Food Truck System. It will also provide the details of the data model, flow and architecture.
-2. SYSTEM OVERVIEW
-
-The Food Truck System provides a platform for a customer to find the food truck and helps an owner to reach his customers as well. The system will help users to search for any food truck in any specific area at any specific time for any specific dish. The Owners can enter the details of their food truck like the menu, offers and availability.
-
-The system includes tasks such as registering the owner with menu, price and offers, accepting and processing bulk orders and evaluate the feedback from the customers. The owner can also give the customer a facility to book an appointment with a food truck. The system also includes functionalities for the customer such as searching the food truck based on the location, time and dishes. The system also gives an option to the customer for placing a bulk order. If there is a requirement for pre-booking then the customer has to make an appointment in advance. The customer can also login their feedbacks on the service provided by the food trucks.
- 
-				
-3. COMPONENTS DESIGN
-
 The main components or functionalities of our system are as follows:
 
 1.	Owner/Customer registration - This component will give a basic description and details of the customer and owner which is provided at the time of registration. The details include name, telephone number and email id.
@@ -48,8 +26,6 @@ The main components or functionalities of our system are as follows:
 
 12.	Admin Access - The admin will only have to approve the food truck details provided by the owners.
 
-APPENDICES
+# Screen shots:
 
-1.	https://en.wikipedia.org/wiki/Spring_Framework-22.11.2018
-2.	https://spring.io/projects/spring-framework -22.11.2018
-
+![image](https://user-images.githubusercontent.com/45390983/55650804-fb328f00-57e6-11e9-82d8-6671fa3ce5a3.png)
