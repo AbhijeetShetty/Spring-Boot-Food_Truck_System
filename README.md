@@ -29,3 +29,9 @@ The main components or functionalities of our system are as follows:
 # Screen shots:
 
 ![image](https://user-images.githubusercontent.com/45390983/55650804-fb328f00-57e6-11e9-82d8-6671fa3ce5a3.png)
+![image](https://user-images.githubusercontent.com/45390983/55650961-75fbaa00-57e7-11e9-8f2c-aec9dddb183a.png)
+![image](https://user-images.githubusercontent.com/45390983/55650969-7ac05e00-57e7-11e9-9df6-e150231a8f0d.png)
+![image](https://user-images.githubusercontent.com/45390983/55650977-7eec7b80-57e7-11e9-82e7-df3736fbbb0a.png)
+![image](https://user-images.githubusercontent.com/45390983/55650984-83b12f80-57e7-11e9-942f-5e7df5b14edc.png)
+![image](https://user-images.githubusercontent.com/45390983/55650993-8744b680-57e7-11e9-8248-b53e36a76809.png)
+![image](https://user-images.githubusercontent.com/45390983/55650999-8b70d400-57e7-11e9-87e5-560711cdee87.png)
